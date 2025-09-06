@@ -40,7 +40,7 @@
                                 delay: 2500,
                                 disableOnInteraction: false,
                             }}
-                        pagination={true}
+                        pagination={{ clickable: true }}
                         navigation={true}
                         modules={[Autoplay, Pagination, Navigation]}
                         className="w-full h-full "
