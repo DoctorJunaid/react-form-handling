@@ -1,0 +1,23 @@
+.swiper-pagination {
+  bottom: 100px !important;
+}
+.swiper-pagination-bullet {
+  width: 20px !important;   /* make it longer */
+  height: 4px !important;   /* make it flat */
+  border-radius: 2px !important; 
+  background: #fff !important; 
+  opacity: 0.5; 
+  transition: all 0.7s ease;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1 !important;
+  background: #9310ff !important;
+  width: 50px !important; /* active line longer */
+}
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  color: #9310ff!important; /* your custom color */
+  font-size: 30px !important; /* adjust arrow size */
+  font-weight: bold;
+}

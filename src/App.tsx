@@ -5,6 +5,7 @@
 
     import React , {useState} from "react";
     import {Swiper , SwiperSlide} from "swiper/react";
+    import "./App.css"
 
     import "swiper/css"
     import "swiper/css/pagination";
@@ -40,7 +41,8 @@
                                 delay: 2500,
                                 disableOnInteraction: false,
                             }}
-                        pagination={{ clickable: true }}
+                        pagination={{ 
+                            clickable: true }}
                         navigation={true}
                         modules={[Autoplay, Pagination, Navigation]}
                         className="w-full h-full "
