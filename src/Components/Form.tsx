@@ -52,9 +52,9 @@ const Form = () => {
                             modules={[Autoplay, Pagination, Navigation]}
                             className="w-full h-full "
                         >
-                            <SwiperSlide><img loading="lazy"  className={" object-contain w-full h-full object-center  my-auto"} src={backgroundImage} alt="bg1"/></SwiperSlide>
-                            <SwiperSlide><img loading="lazy" className={"object-center object-contain w-full h-full  my-auto"} src={backgroundImage2} alt="bg2"/></SwiperSlide>
-                            <SwiperSlide><img loading="lazy" className={"object-center object-contain h-full w-full   my-auto"} src={backgroundImage3} alt="bg3"/></SwiperSlide>
+                            <SwiperSlide><img   className={" object-contain w-full h-full object-center  my-auto"} src={backgroundImage} alt="bg1"/></SwiperSlide>
+                            <SwiperSlide><img className={"object-center object-contain w-full h-full  my-auto"} src={backgroundImage2} alt="bg2"/></SwiperSlide>
+                            <SwiperSlide><img  className={"object-center object-contain h-full w-full   my-auto"} src={backgroundImage3} alt="bg3"/></SwiperSlide>
 
                         </Swiper>
 
