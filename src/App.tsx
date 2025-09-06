@@ -29,7 +29,7 @@
             // container
             <div className={"max-w-screen min-h-screen flex justify-center items-center bg-[#605A71] text-white"}>
                 {/*form*/}
-                <form className={"w-full   md:flex md:gap-7   bg-[#2C2638] max-w-[950px] md:px-10   mx-auto md:rounded-xl"} onSubmit={formHandler}>
+                <form className={"w-full h-screen md:h-full md  md:flex md:gap-7   bg-[#2C2638] max-w-[950px] md:px-10   mx-auto md:rounded-xl"} onSubmit={formHandler}>
                 {/*  left section image*/}
                 <div className={" left-section md:w-1/2 hidden md:block rounded-2xl max-h-[570px] overflow-hidden   my-auto "}>
                     {/*swipper modules */}
