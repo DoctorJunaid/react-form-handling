@@ -12,9 +12,25 @@
     import "swiper/css/navigation";
     import {Autoplay, Pagination, Navigation } from 'swiper/modules';
 
-const Form = () => {
+interface FormData {
+    FirstName?: string;
+    LastName?: string;
+    age?: string;
+    gender?: string;
+    Email?: string;
+    Password?: string;
+    ConfirmPassword?: string;
+    checkbox?: boolean;
+}
+
+interface FormProps {
+    setFormObj: React.Dispatch<React.SetStateAction<FormData>>;
+    onSubmit: () => void;
+}
+
+const Form: React.FC<FormProps> = ({setFormObj, onSubmit}) => {
   
-            const [formObj, setFormObj] = useState({})
+
             const [showPassword, setShowPassword] = useState(false);
             const [showConfirmPassword, setShowConfirmPassword] = useState(false)
             const togglePassword = () => {
@@ -25,11 +41,11 @@ const Form = () => {
             }
                 function formHandler(e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) {
         const { name, value } = e.target;
-        setFormObj((prev) => ({ ...prev, [name]: value }));
-        console.log(formObj);
+        setFormObj((prev: FormData) => ({ ...prev, [name]: value }));
     }
             function  SubmitHandler(e :React.FormEvent<HTMLFormElement>){
                 e.preventDefault()
+                onSubmit();
             }
             return (
                 // container
@@ -38,7 +54,7 @@ const Form = () => {
                     <form className={"w-full h-screen md:h-full md  md:flex md:gap-7   bg-[#2C2638] max-w-[950px] md:px-10   mx-auto md:rounded-xl"} onSubmit={SubmitHandler}>
                     {/*  left section image*/}
                     <div className={" left-section md:w-1/2 hidden md:block rounded-2xl max-h-[570px] overflow-hidden   my-auto "}>
-                        {/*swipper modules */}
+                        {/*swiper modules */}
                         <Swiper
                             spaceBetween={30}
                             centeredSlides={true}
@@ -96,9 +112,9 @@ const Form = () => {
                     <div className={"border-none block relative mb-3 md:mb-4 bg-[#3C364C] mx-auto w-11/12  rounded-md text-sm md:text-base"}>
                     <input onChange={formHandler} required={true}  type={showPassword ? "text" : "password"} name={"Password"} placeholder={"Password"} className={"border-none block mb-4 md:mb-4  p-2 bg-[#3C364C] w-full  mx-auto md:text-base rounded-md text-sm placeholder:text-[#7F7B89]"}/>
                         {showPassword ?
-                        <EyeOff onClick={togglePassword} className={"absolute right-2 top-2 md:top-4 text-[#7F7B89] hover:text-white cursor-pointer"} />
+                        <EyeOff onClick={togglePassword} className={"absolute right-2 top-2 md:top-2 text-[#7F7B89] hover:text-white cursor-pointer"} />
                             :
-                        <Eye onClick={togglePassword} className={"absolute right-2 top-2 md:top-4 text-[#7F7B89] hover:text-white cursor-pointer"} />
+                        <Eye onClick={togglePassword} className={"absolute right-2 top-2 md:top-2 text-[#7F7B89] hover:text-white cursor-pointer"} />
                         }
                     </div>
                     {/*Confirm Password*/}
@@ -106,8 +122,8 @@ const Form = () => {
                         <input onChange={formHandler} required={true}  type={showConfirmPassword ? "text" : "password"} name={"ConfirmPassword"} placeholder={"Confirm your Password"} className={"border-none block mb-3 md:mb-4 p-2  md:text-base     bg-[#3C364C] w-full  mx-auto rounded-md text-sm placeholder:text-[#7F7B89]"}/>
 
                         {showConfirmPassword ?
-                            <EyeOff onClick={toggleConfirmPassword} className={"absolute right-2 top-2 md:top-4 text-[#7F7B89] hover:text-white  cursor-pointer "} /> :
-                        <Eye onClick={toggleConfirmPassword} className={"absolute right-2 top-2 md:top-4 text-[#7F7B89] hover:text-white  cursor-pointer"} />
+                            <EyeOff onClick={toggleConfirmPassword} className={"absolute right-2 top-2 md:top-2 text-[#7F7B89] hover:text-white  cursor-pointer "} /> :
+                        <Eye onClick={toggleConfirmPassword} className={"absolute right-2 top-2 md:top-2 text-[#7F7B89] hover:text-white  cursor-pointer"} />
                         }
                     </div>
                     {/*term and condition*/}

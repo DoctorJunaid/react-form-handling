@@ -1,7 +1,7 @@
 {
   "name": "react-form-handling",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -14,6 +14,7 @@
     "lucide-react": "^0.542.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "react-loading-indicators": "^1.0.1",
     "swiper": "^11.2.10",
     "tailwindcss": "^4.1.13"
   },
